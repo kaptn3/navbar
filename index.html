@@ -53,14 +53,24 @@
         <li class="navbar__nav-item">
           <a class="navbar__nav-item-link navbar__nav-item-link_active" href="/" alt="Home">Home</a>
         </li>
+        <!-- submenus item -->
         <li class="navbar__nav-item">
-          <a @mouseover="showSubMenu" @mouseout="showSubMenu" @click="showSubMenu" class="navbar__nav-item-link" :class="{ 'navbar__nav-item-link_active': isShowSubMenu }" alt="SubMenu">SubMenu</a>
-          <ul @mouseover="showSubMenu" @mouseout="showSubMenu" class="navbar__sub-menu" v-if="isShowSubMenu">
+          <a class="navbar__nav-item-link navbar__nav-item-link-submenu" alt="SubMenu">SubMenu</a>
+          <ul class="navbar__sub-menu">
             <li v-for="n in 5" class="navbar__sub-menu-item">
               <a class="navbar__sub-menu-item-link" href="#" :alt="'Submenu Item ' + n">Submenu Item {{ n }}</a>
             </li>
           </ul>
         </li>
+        <li class="navbar__nav-item">
+          <a class="navbar__nav-item-link navbar__nav-item-link-submenu" alt="SubMenu">SubMenu 2</a>
+          <ul class="navbar__sub-menu">
+            <li v-for="n in 3" class="navbar__sub-menu-item">
+              <a class="navbar__sub-menu-item-link" href="#" :alt="'Submenu Item ' + n">Submenu Item {{ n }}</a>
+            </li>
+          </ul>
+        </li>
+        <!-- end -->
         <li v-for="n in 5" class="navbar__nav-item">
           <a class="navbar__nav-item-link" href="#" :alt="'Item ' + n">Item {{ n }}</a>
         </li>
