@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Navbar</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" type="text/css" href="css/navbar.css">
+</head>
+<body>
+  <div class="container">
+    <!-- navbar element -->
+    <nav class="navbar">
+      <!-- mobile button -->
+      <button @click="showMobileNav" type="button" class="navbar__button" :class="{ 'navbar__button_active': isShowNav }">
+        <i class="fas fa-bars">Button</i>
+      </button>
+
+      <ul class="navbar__nav" :class="{ 'navbar__nav-mobile_show': isShowNav }">
+        <li class="navbar__nav-item">
+          <a class="navbar__nav-item-link navbar__nav-item-link_active" href="/" alt="Home">Home</a>
+        </li>
+        <li v-for="n in 5" class="navbar__nav-item">
+          <a class="navbar__nav-item-link" href="#" :alt="'Item ' + n">Item {{ n }}</a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+
+  <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
+  <script src="js/vue.js"></script>
+  <script src="js/navbar.js"></script>
+</body>
+</html>
