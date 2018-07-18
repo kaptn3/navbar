@@ -53,6 +53,14 @@
         <li class="navbar__nav-item">
           <a class="navbar__nav-item-link navbar__nav-item-link_active" href="/" alt="Home">Home</a>
         </li>
+        <li class="navbar__nav-item">
+          <a @mouseover="showSubMenu" @mouseout="showSubMenu" @click="showSubMenu" class="navbar__nav-item-link" :class="{ 'navbar__nav-item-link_active': isShowSubMenu }" alt="SubMenu">SubMenu</a>
+          <ul class="navbar__sub-menu" v-if="isShowSubMenu">
+            <li v-for="n in 5" class="navbar__sub-menu-item">
+              <a class="navbar__sub-menu-item-link" href="#" :alt="'Submenu Item ' + n">Submenu Item {{ n }}</a>
+            </li>
+          </ul>
+        </li>
         <li v-for="n in 5" class="navbar__nav-item">
           <a class="navbar__nav-item-link" href="#" :alt="'Item ' + n">Item {{ n }}</a>
         </li>
